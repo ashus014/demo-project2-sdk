@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.http.HttpRequest;
 
 public class ServiceRequest implements RequestImpl{
 
@@ -18,6 +19,7 @@ public class ServiceRequest implements RequestImpl{
         int responseCode = connection.getResponseCode();
 
         if(responseCode == HttpURLConnection.HTTP_OK){
+
             BufferedReader in = new BufferedReader(
                     new InputStreamReader((connection.getInputStream()))
             );
